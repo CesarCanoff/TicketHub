@@ -1,0 +1,7 @@
+# Normaliza finais de linha (importante no Windows: scripts .sh precisam de LF)
+* text=auto
+*.sh text eol=lf
+*.sql text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
