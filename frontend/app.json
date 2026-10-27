@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "TicketHub",
+    "slug": "tickethub",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": { "backgroundColor": "#1E3A8A" }
+  }
+}
