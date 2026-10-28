@@ -1,24 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
-  View, Text, TextInput, TouchableOpacity, StyleSheet,
-  KeyboardAvoidingView, Platform, ActivityIndicator,
-} from 'react-native';
-import { useAuth } from '../context/AuthContext';
-import { colors } from '../theme/colors';
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  ActivityIndicator,
+} from "react-native";
+import { useAuth } from "../context/AuthContext";
+import { colors } from "../theme/colors";
+
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default function LoginScreen() {
   const { login } = useAuth();
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [erro, setErro] = useState('');
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
 
   async function handleEntrar() {
     if (!email.trim() || !senha) {
-      setErro('Informe e-mail e senha.');
+      setErro("Informe e-mail e senha.");
       return;
     }
-    setErro('');
+    setErro("");
     setCarregando(true);
     try {
       await login(email.trim(), senha);
@@ -32,7 +40,7 @@ export default function LoginScreen() {
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
       <View style={styles.header}>
         <Text style={styles.logo}>TicketHub</Text>
@@ -40,7 +48,9 @@ export default function LoginScreen() {
 
       <View style={styles.form}>
         <Text style={styles.titulo}>Acesse sua conta</Text>
-        <Text style={styles.subtitulo}>Entre usando seu e-mail e senha cadastrados</Text>
+        <Text style={styles.subtitulo}>
+          Entre usando seu e-mail e senha cadastrados
+        </Text>
 
         <Text style={styles.label}>E-MAIL</Text>
         <TextInput
@@ -65,17 +75,17 @@ export default function LoginScreen() {
 
         {!!erro && <Text style={styles.erro}>{erro}</Text>}
 
-        <TouchableOpacity style={styles.botao} onPress={handleEntrar} disabled={carregando}>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={handleEntrar}
+          disabled={carregando}
+        >
           {carregando ? (
             <ActivityIndicator color="#fff" />
           ) : (
             <Text style={styles.botaoTexto}>Entrar</Text>
           )}
         </TouchableOpacity>
-
-        <Text style={styles.rodape}>
-          As credenciais de acesso são fornecidas pela equipe de T.I. da sua empresa.
-        </Text>
       </View>
     </KeyboardAvoidingView>
   );
@@ -84,25 +94,39 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   header: {
+    height: "55%",
     backgroundColor: colors.primary,
     paddingTop: 80,
     paddingBottom: 60,
-    alignItems: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
-  logo: { color: '#fff', fontSize: 26, fontWeight: '700' },
+  logo: { color: colors.card, fontSize: RFValue(42), fontWeight: "700" },
   form: {
     flex: 1,
+    height: "45%",
     marginTop: -30,
     backgroundColor: colors.card,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    padding: 24,
+    padding: 36,
   },
-  titulo: { fontSize: 20, fontWeight: '700', color: colors.text, marginBottom: 4 },
+  titulo: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: colors.text,
+    marginBottom: 4,
+  },
   subtitulo: { fontSize: 13, color: colors.textMuted, marginBottom: 24 },
-  label: { fontSize: 11, fontWeight: '700', color: colors.textMuted, marginBottom: 6, marginTop: 12 },
+  label: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: colors.textMuted,
+    marginBottom: 6,
+    marginTop: 12,
+  },
   input: {
-    borderWidth: 1,
+    borderBottomWidth: 1,
     borderColor: colors.border,
     borderRadius: 10,
     paddingHorizontal: 14,
@@ -115,9 +139,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     borderRadius: 10,
     paddingVertical: 14,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 24,
   },
-  botaoTexto: { color: '#fff', fontSize: 15, fontWeight: '700' },
-  rodape: { fontSize: 12, color: colors.textMuted, textAlign: 'center', marginTop: 20 },
+  botaoTexto: { color: "#fff", fontSize: 15, fontWeight: "700" },
+  rodape: {
+    fontSize: 12,
+    color: colors.textMuted,
+    textAlign: "center",
+    marginTop: 20,
+  },
 });
