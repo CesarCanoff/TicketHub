@@ -97,8 +97,86 @@ INSERT INTO categoria_servico (nome) VALUES
     ('Impressora'),
     ('Outros');
 
--- Chamado de exemplo: aberto e ainda sem tecnico responsavel
+-- Chamados de exemplo: abertos e sem técnico responsável
 INSERT INTO chamado (titulo, descricao, status, categoria_id, cliente_id, tecnico_id) VALUES
-    ('Backup nao esta funcionando',
-     'O sistema de backup automatico parou de funcionar. Ultima execucao bem-sucedida foi ha uma semana.',
-     'ABERTO', 2, 1, NULL);
+
+    ('Computador não liga',
+     'Ao pressionar o botão de ligar, o computador não inicia. Nenhuma luz acende e não há sinal de funcionamento.',
+     'ABERTO', 2, 1, NULL),
+
+    ('Internet muito lenta',
+     'A conexão com a internet está extremamente lenta, dificultando o acesso aos sistemas utilizados durante o expediente.',
+     'ABERTO', 1, 1, NULL),
+
+    ('Impressora não imprime',
+     'A impressora recebe os documentos enviados, mas não inicia a impressão. Já verifiquei os cabos e reiniciei o equipamento.',
+     'ABERTO', 3, 1, NULL),
+
+    ('Esqueci minha senha',
+     'Não consigo acessar minha conta porque esqueci minha senha. Preciso de auxílio para recuperar o acesso ao sistema.',
+     'ABERTO', 4, 1, NULL),
+
+    ('Sistema apresentando lentidão',
+     'O sistema está demorando muito para carregar as páginas e executar operações. O problema começou hoje pela manhã.',
+     'ABERTO', 5, 1, NULL),
+
+    ('Monitor sem imagem',
+     'O monitor liga, mas permanece com a tela preta. Já verifiquei os cabos de conexão e reiniciei o computador.',
+     'ABERTO', 2, 1, NULL),
+
+    ('Solicitação de instalação de software',
+     'Preciso instalar o Visual Studio Code no computador utilizado para desenvolver um projeto acadêmico.',
+     'ABERTO', 6, 1, NULL),
+
+    ('E-mail não recebe mensagens',
+     'Minha caixa de entrada não está recebendo novas mensagens. O problema persiste mesmo após reiniciar o aplicativo de e-mail.',
+     'ABERTO', 5, 1, NULL),
+
+    ('Teclado com teclas defeituosas',
+     'Algumas teclas do teclado não respondem corretamente, dificultando a digitação de documentos e o preenchimento de formulários.',
+     'ABERTO', 2, 1, NULL),
+
+    ('Acesso ao sistema bloqueado',
+     'Ao tentar entrar no sistema interno, aparece uma mensagem informando que meu usuário está bloqueado.',
+     'ABERTO', 4, 1, NULL),
+
+    ('Aplicativo fecha sozinho',
+     'O aplicativo fecha inesperadamente após alguns minutos de uso. O problema acontece mesmo após reiniciar o dispositivo.',
+     'ABERTO', 5, 1, NULL),
+
+    ('Solicitação de criação de usuário',
+     'Preciso de uma nova conta de usuário para acessar os sistemas necessários às minhas atividades.',
+     'ABERTO', 4, 1, NULL),
+
+    ('Mouse não funciona',
+     'O mouse deixou de responder aos movimentos e cliques. Já desconectei e conectei o dispositivo novamente, mas o problema continua.',
+     'ABERTO', 2, 1, NULL),
+
+    ('Falha ao acessar o banco de dados',
+     'O sistema apresenta uma mensagem de erro ao tentar consultar informações no banco de dados, impedindo a continuidade da operação.',
+     'ABERTO', 5, 1, NULL),
+
+    ('Solicitação de atualização do sistema',
+     'Preciso que o sistema instalado no computador seja atualizado para a versão mais recente disponível.',
+     'ABERTO', 6, 1, NULL),
+
+    ('Computador reinicia sozinho',
+     'O computador está reiniciando inesperadamente durante o uso, interrompendo as atividades e causando perda de trabalho não salvo.',
+     'ABERTO', 2, 1, NULL),
+
+    ('Problema ao anexar arquivos',
+     'Não consigo anexar arquivos aos formulários do sistema. Após selecionar o documento, aparece uma mensagem de falha no envio.',
+     'ABERTO', 5, 1, NULL),
+
+    ('Solicitação de configuração de rede',
+     'Preciso configurar o acesso à rede interna para utilizar os recursos compartilhados disponíveis no ambiente de trabalho.',
+     'ABERTO', 1, 1, NULL),
+
+    ('Espaço em disco insuficiente',
+     'O computador apresenta avisos de pouco espaço disponível no disco, impedindo a instalação de programas e o armazenamento de arquivos.',
+     'ABERTO', 2, 1, NULL),
+
+    ('Erro ao gerar relatório',
+     'Ao tentar gerar um relatório pelo sistema, ocorre um erro e o arquivo não é disponibilizado para download.',
+     'ABERTO', 5, 1, NULL);
+
