@@ -1,15 +1,15 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ActivityIndicator, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { ActivityIndicator, View } from "react-native";
 
-import { useAuth } from '../context/AuthContext';
-import { colors } from '../theme/colors';
+import { useAuth } from "../context/AuthContext";
+import { colors } from "../theme/colors";
 
-import LoginScreen from '../screens/LoginScreen';
-import ChamadosListScreen from '../screens/ChamadosListScreen';
-import CreateChamadoScreen from '../screens/CreateChamadoScreen';
-import ChamadoDetailsScreen from '../screens/ChamadoDetailsScreen';
+import LoginScreen from "../screens/LoginScreen";
+import ChamadosListScreen from "../screens/ChamadosListScreen";
+import CreateChamadoScreen from "../screens/CreateChamadoScreen";
+import ChamadoDetailsScreen from "../screens/ChamadoDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +18,7 @@ export default function AppNavigator() {
 
   if (carregando) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator color={colors.primary} />
       </View>
     );
@@ -35,12 +35,10 @@ export default function AppNavigator() {
             <Stack.Screen
               name="CreateChamado"
               component={CreateChamadoScreen}
-              options={{ headerShown: true, title: 'Novo chamado' }}
             />
             <Stack.Screen
               name="ChamadoDetails"
               component={ChamadoDetailsScreen}
-              options={{ headerShown: true, title: 'Detalhes' }}
             />
           </>
         )}
